@@ -1,0 +1,20 @@
+# Local office audio. Python 3.10+ and ffmpeg.
+#
+# Windows:
+#   py -3.13 -m venv .venv
+#   .\.venv\Scripts\python.exe -m pip install -r requirements-tts.txt
+#
+# CUDA GPU (recommended for Qwen3-TTS):
+#   .venv\Scripts\python.exe -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+qwen-tts
+soundfile
+numpy
+tzdata
+torch
+peft
+
+# Optional alternate backends:
+# chatterbox-tts
+# kokoro-onnx
+

@@ -1,0 +1,41 @@
+{
+  "meta": {
+    "title": "Mid-Day Prayer Lessons",
+    "source": "The Trinity Mission (thetrinitymission.org)",
+    "source_file": "Midday_Prayer_Lessons_Card.pdf",
+    "description": "Fixed weekly cycle of short lessons for Midday Prayer. No Sunday entry in original card.",
+    "note": "Print → Cut along the gold border → Place in your Bible"
+  },
+  "lessons": {
+    "monday": [
+      "Isaiah 1:16–20",
+      "Philippians 2:12b–13",
+      "2 Corinthians 5:17–18"
+    ],
+    "tuesday": [
+      "Isaiah 40:6–8",
+      "Colossians 3:16–17",
+      "1 Corinthians 13:2–3"
+    ],
+    "wednesday": [
+      "Isaiah 45:20b, 21b–23",
+      "Titus 2:11–14",
+      "Hebrews 1:1–3a"
+    ],
+    "thursday": [
+      "Micah 6:8",
+      "Philippians 2:3–4",
+      "1 John 3:16–18"
+    ],
+    "friday": [
+      "Isaiah 58:6–9a",
+      "Ephesians 2:8–10",
+      "1 John 3:1–2"
+    ],
+    "saturday": [
+      "Malachi 1:11",
+      "Romans 12:1–2",
+      "1 Peter 1:14–15, 18–20"
+    ]
+  }
+}

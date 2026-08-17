@@ -1,0 +1,1510 @@
+[
+  {
+    "scripture": "Genesis 13\u201315 \u00b7 Matthew 3",
+    "refs": [
+      {
+        "book": "gen",
+        "chapter": 13
+      },
+      {
+        "book": "gen",
+        "chapter": 14
+      },
+      {
+        "book": "gen",
+        "chapter": 15
+      },
+      {
+        "book": "matt",
+        "chapter": 3
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  },
+  {
+    "scripture": "Genesis 28\u201330",
+    "refs": [
+      {
+        "book": "gen",
+        "chapter": 28
+      },
+      {
+        "book": "gen",
+        "chapter": 29
+      },
+      {
+        "book": "gen",
+        "chapter": 30
+      }
+    ],
+    "echo": "Heidelberg Catechism Q26",
+    "source": "hc",
+    "cite": {
+      "number": 26
+    }
+  },
+  {
+    "scripture": "Genesis 43\u201345 \u00b7 Matthew 11",
+    "refs": [
+      {
+        "book": "gen",
+        "chapter": 43
+      },
+      {
+        "book": "gen",
+        "chapter": 44
+      },
+      {
+        "book": "gen",
+        "chapter": 45
+      },
+      {
+        "book": "matt",
+        "chapter": 11
+      }
+    ],
+    "echo": "Heidelberg Catechism Q60",
+    "source": "hc",
+    "cite": {
+      "number": 60
+    }
+  },
+  {
+    "scripture": "Exodus 8\u201310 \u00b7 Matthew 14",
+    "refs": [
+      {
+        "book": "exod",
+        "chapter": 8
+      },
+      {
+        "book": "exod",
+        "chapter": 9
+      },
+      {
+        "book": "exod",
+        "chapter": 10
+      },
+      {
+        "book": "matt",
+        "chapter": 14
+      }
+    ],
+    "echo": "Belgic Confession Art. 2",
+    "source": "belgic",
+    "cite": {
+      "article": 2
+    }
+  },
+  {
+    "scripture": "Exodus 23\u201325",
+    "refs": [
+      {
+        "book": "exod",
+        "chapter": 23
+      },
+      {
+        "book": "exod",
+        "chapter": 24
+      },
+      {
+        "book": "exod",
+        "chapter": 25
+      }
+    ],
+    "echo": "Belgic Confession Art. 9",
+    "source": "belgic",
+    "cite": {
+      "article": 9
+    }
+  },
+  {
+    "scripture": "Exodus 38\u201340 \u00b7 Matthew 22",
+    "refs": [
+      {
+        "book": "exod",
+        "chapter": 38
+      },
+      {
+        "book": "exod",
+        "chapter": 39
+      },
+      {
+        "book": "exod",
+        "chapter": 40
+      },
+      {
+        "book": "matt",
+        "chapter": 22
+      }
+    ],
+    "echo": "Belgic Confession Art. 13",
+    "source": "belgic",
+    "cite": {
+      "article": 13
+    }
+  },
+  {
+    "scripture": "Leviticus 13\u201315 \u00b7 Matthew 25",
+    "refs": [
+      {
+        "book": "lev",
+        "chapter": 13
+      },
+      {
+        "book": "lev",
+        "chapter": 14
+      },
+      {
+        "book": "lev",
+        "chapter": 15
+      },
+      {
+        "book": "matt",
+        "chapter": 25
+      }
+    ],
+    "echo": "Belgic Confession Art. 16",
+    "source": "belgic",
+    "cite": {
+      "article": 16
+    }
+  },
+  {
+    "scripture": "Numbers 1\u20133 \u00b7 Matthew 28",
+    "refs": [
+      {
+        "book": "num",
+        "chapter": 1
+      },
+      {
+        "book": "num",
+        "chapter": 2
+      },
+      {
+        "book": "num",
+        "chapter": 3
+      },
+      {
+        "book": "matt",
+        "chapter": 28
+      }
+    ],
+    "echo": "Westminster Confession 7.3",
+    "source": "wcf",
+    "cite": {
+      "chapter": 7,
+      "section": 3
+    }
+  },
+  {
+    "scripture": "Numbers 16\u201318",
+    "refs": [
+      {
+        "book": "num",
+        "chapter": 16
+      },
+      {
+        "book": "num",
+        "chapter": 17
+      },
+      {
+        "book": "num",
+        "chapter": 18
+      }
+    ],
+    "echo": "Westminster Confession 11.1",
+    "source": "wcf",
+    "cite": {
+      "chapter": 11,
+      "section": 1
+    }
+  },
+  {
+    "scripture": "Deuteronomy 10\u201312 \u00b7 Mark 11",
+    "refs": [
+      {
+        "book": "deut",
+        "chapter": 10
+      },
+      {
+        "book": "deut",
+        "chapter": 11
+      },
+      {
+        "book": "deut",
+        "chapter": 12
+      },
+      {
+        "book": "mark",
+        "chapter": 11
+      }
+    ],
+    "echo": "Westminster Confession 25.2",
+    "source": "wcf",
+    "cite": {
+      "chapter": 25,
+      "section": 2
+    }
+  },
+  {
+    "scripture": "Deuteronomy 25\u201327",
+    "refs": [
+      {
+        "book": "deut",
+        "chapter": 25
+      },
+      {
+        "book": "deut",
+        "chapter": 26
+      },
+      {
+        "book": "deut",
+        "chapter": 27
+      }
+    ],
+    "echo": "Heidelberg Catechism Q52",
+    "source": "hc",
+    "cite": {
+      "number": 52
+    }
+  },
+  {
+    "scripture": "Joshua 6\u20138 \u00b7 Luke 3",
+    "refs": [
+      {
+        "book": "josh",
+        "chapter": 6
+      },
+      {
+        "book": "josh",
+        "chapter": 7
+      },
+      {
+        "book": "josh",
+        "chapter": 8
+      },
+      {
+        "book": "luke",
+        "chapter": 3
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  },
+  {
+    "scripture": "Joshua 21\u201323 \u00b7 Luke 6",
+    "refs": [
+      {
+        "book": "josh",
+        "chapter": 21
+      },
+      {
+        "book": "josh",
+        "chapter": 22
+      },
+      {
+        "book": "josh",
+        "chapter": 23
+      },
+      {
+        "book": "luke",
+        "chapter": 6
+      }
+    ],
+    "echo": "Heidelberg Catechism Q26",
+    "source": "hc",
+    "cite": {
+      "number": 26
+    }
+  },
+  {
+    "scripture": "Judges 12\u201314 \u00b7 Luke 9",
+    "refs": [
+      {
+        "book": "judg",
+        "chapter": 12
+      },
+      {
+        "book": "judg",
+        "chapter": 13
+      },
+      {
+        "book": "judg",
+        "chapter": 14
+      },
+      {
+        "book": "luke",
+        "chapter": 9
+      }
+    ],
+    "echo": "Heidelberg Catechism Q60",
+    "source": "hc",
+    "cite": {
+      "number": 60
+    }
+  },
+  {
+    "scripture": "1 Samuel 2\u20134",
+    "refs": [
+      {
+        "book": "1sam",
+        "chapter": 2
+      },
+      {
+        "book": "1sam",
+        "chapter": 3
+      },
+      {
+        "book": "1sam",
+        "chapter": 4
+      }
+    ],
+    "echo": "Belgic Confession Art. 2",
+    "source": "belgic",
+    "cite": {
+      "article": 2
+    }
+  },
+  {
+    "scripture": "1 Samuel 17\u201319 \u00b7 Luke 17",
+    "refs": [
+      {
+        "book": "1sam",
+        "chapter": 17
+      },
+      {
+        "book": "1sam",
+        "chapter": 18
+      },
+      {
+        "book": "1sam",
+        "chapter": 19
+      },
+      {
+        "book": "luke",
+        "chapter": 17
+      }
+    ],
+    "echo": "Belgic Confession Art. 9",
+    "source": "belgic",
+    "cite": {
+      "article": 9
+    }
+  },
+  {
+    "scripture": "2 Samuel 1\u20133 \u00b7 Luke 20",
+    "refs": [
+      {
+        "book": "2sam",
+        "chapter": 1
+      },
+      {
+        "book": "2sam",
+        "chapter": 2
+      },
+      {
+        "book": "2sam",
+        "chapter": 3
+      },
+      {
+        "book": "luke",
+        "chapter": 20
+      }
+    ],
+    "echo": "Belgic Confession Art. 13",
+    "source": "belgic",
+    "cite": {
+      "article": 13
+    }
+  },
+  {
+    "scripture": "2 Samuel 16\u201318",
+    "refs": [
+      {
+        "book": "2sam",
+        "chapter": 16
+      },
+      {
+        "book": "2sam",
+        "chapter": 17
+      },
+      {
+        "book": "2sam",
+        "chapter": 18
+      }
+    ],
+    "echo": "Belgic Confession Art. 16",
+    "source": "belgic",
+    "cite": {
+      "article": 16
+    }
+  },
+  {
+    "scripture": "1 Kings 7\u20139 \u00b7 John 4",
+    "refs": [
+      {
+        "book": "1kgs",
+        "chapter": 7
+      },
+      {
+        "book": "1kgs",
+        "chapter": 8
+      },
+      {
+        "book": "1kgs",
+        "chapter": 9
+      },
+      {
+        "book": "john",
+        "chapter": 4
+      }
+    ],
+    "echo": "Westminster Confession 7.3",
+    "source": "wcf",
+    "cite": {
+      "chapter": 7,
+      "section": 3
+    }
+  },
+  {
+    "scripture": "1 Kings 22\u201322; 2 Kings 1\u20132 \u00b7 John 7",
+    "refs": [
+      {
+        "book": "1kgs",
+        "chapter": 22
+      },
+      {
+        "book": "2kgs",
+        "chapter": 1
+      },
+      {
+        "book": "2kgs",
+        "chapter": 2
+      },
+      {
+        "book": "john",
+        "chapter": 7
+      }
+    ],
+    "echo": "Westminster Confession 11.1",
+    "source": "wcf",
+    "cite": {
+      "chapter": 11,
+      "section": 1
+    }
+  },
+  {
+    "scripture": "1 Chronicles 5\u20137",
+    "refs": [
+      {
+        "book": "1chr",
+        "chapter": 5
+      },
+      {
+        "book": "1chr",
+        "chapter": 6
+      },
+      {
+        "book": "1chr",
+        "chapter": 7
+      }
+    ],
+    "echo": "Westminster Confession 25.2",
+    "source": "wcf",
+    "cite": {
+      "chapter": 25,
+      "section": 2
+    }
+  },
+  {
+    "scripture": "1 Chronicles 20\u201322 \u00b7 John 18",
+    "refs": [
+      {
+        "book": "1chr",
+        "chapter": 20
+      },
+      {
+        "book": "1chr",
+        "chapter": 21
+      },
+      {
+        "book": "1chr",
+        "chapter": 22
+      },
+      {
+        "book": "john",
+        "chapter": 18
+      }
+    ],
+    "echo": "Heidelberg Catechism Q52",
+    "source": "hc",
+    "cite": {
+      "number": 52
+    }
+  },
+  {
+    "scripture": "2 Chronicles 6\u20138 \u00b7 John 21",
+    "refs": [
+      {
+        "book": "2chr",
+        "chapter": 6
+      },
+      {
+        "book": "2chr",
+        "chapter": 7
+      },
+      {
+        "book": "2chr",
+        "chapter": 8
+      },
+      {
+        "book": "john",
+        "chapter": 21
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  },
+  {
+    "scripture": "2 Chronicles 36\u201336; Ezra 1\u20132 \u00b7 Acts 8",
+    "refs": [
+      {
+        "book": "2chr",
+        "chapter": 36
+      },
+      {
+        "book": "ezra",
+        "chapter": 1
+      },
+      {
+        "book": "ezra",
+        "chapter": 2
+      },
+      {
+        "book": "acts",
+        "chapter": 8
+      }
+    ],
+    "echo": "Heidelberg Catechism Q60",
+    "source": "hc",
+    "cite": {
+      "number": 60
+    }
+  },
+  {
+    "scripture": "Nehemiah 5\u20137 \u00b7 Acts 11",
+    "refs": [
+      {
+        "book": "neh",
+        "chapter": 5
+      },
+      {
+        "book": "neh",
+        "chapter": 6
+      },
+      {
+        "book": "neh",
+        "chapter": 7
+      },
+      {
+        "book": "acts",
+        "chapter": 11
+      }
+    ],
+    "echo": "Belgic Confession Art. 2",
+    "source": "belgic",
+    "cite": {
+      "article": 2
+    }
+  },
+  {
+    "scripture": "Esther 7\u20139 \u00b7 Acts 14",
+    "refs": [
+      {
+        "book": "esth",
+        "chapter": 7
+      },
+      {
+        "book": "esth",
+        "chapter": 8
+      },
+      {
+        "book": "esth",
+        "chapter": 9
+      },
+      {
+        "book": "acts",
+        "chapter": 14
+      }
+    ],
+    "echo": "Belgic Confession Art. 9",
+    "source": "belgic",
+    "cite": {
+      "article": 9
+    }
+  },
+  {
+    "scripture": "Job 12\u201314",
+    "refs": [
+      {
+        "book": "job",
+        "chapter": 12
+      },
+      {
+        "book": "job",
+        "chapter": 13
+      },
+      {
+        "book": "job",
+        "chapter": 14
+      }
+    ],
+    "echo": "Belgic Confession Art. 13",
+    "source": "belgic",
+    "cite": {
+      "article": 13
+    }
+  },
+  {
+    "scripture": "Job 27\u201329 \u00b7 Acts 22",
+    "refs": [
+      {
+        "book": "job",
+        "chapter": 27
+      },
+      {
+        "book": "job",
+        "chapter": 28
+      },
+      {
+        "book": "job",
+        "chapter": 29
+      },
+      {
+        "book": "acts",
+        "chapter": 22
+      }
+    ],
+    "echo": "Belgic Confession Art. 16",
+    "source": "belgic",
+    "cite": {
+      "article": 16
+    }
+  },
+  {
+    "scripture": "Job 42\u201342; Psalms 1\u20132 \u00b7 Acts 25",
+    "refs": [
+      {
+        "book": "job",
+        "chapter": 42
+      },
+      {
+        "book": "ps",
+        "chapter": 1
+      },
+      {
+        "book": "ps",
+        "chapter": 2
+      },
+      {
+        "book": "acts",
+        "chapter": 25
+      }
+    ],
+    "echo": "Westminster Confession 7.3",
+    "source": "wcf",
+    "cite": {
+      "chapter": 7,
+      "section": 3
+    }
+  },
+  {
+    "scripture": "Psalms 15\u201317",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 15
+      },
+      {
+        "book": "ps",
+        "chapter": 16
+      },
+      {
+        "book": "ps",
+        "chapter": 17
+      }
+    ],
+    "echo": "Westminster Confession 11.1",
+    "source": "wcf",
+    "cite": {
+      "chapter": 11,
+      "section": 1
+    }
+  },
+  {
+    "scripture": "Psalms 45\u201347 \u00b7 Romans 8",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 45
+      },
+      {
+        "book": "ps",
+        "chapter": 46
+      },
+      {
+        "book": "ps",
+        "chapter": 47
+      },
+      {
+        "book": "rom",
+        "chapter": 8
+      }
+    ],
+    "echo": "Westminster Confession 25.2",
+    "source": "wcf",
+    "cite": {
+      "chapter": 25,
+      "section": 2
+    }
+  },
+  {
+    "scripture": "Psalms 60\u201362 \u00b7 Romans 11",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 60
+      },
+      {
+        "book": "ps",
+        "chapter": 61
+      },
+      {
+        "book": "ps",
+        "chapter": 62
+      },
+      {
+        "book": "rom",
+        "chapter": 11
+      }
+    ],
+    "echo": "Heidelberg Catechism Q52",
+    "source": "hc",
+    "cite": {
+      "number": 52
+    }
+  },
+  {
+    "scripture": "Psalms 75\u201377",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 75
+      },
+      {
+        "book": "ps",
+        "chapter": 76
+      },
+      {
+        "book": "ps",
+        "chapter": 77
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  },
+  {
+    "scripture": "Psalms 90\u201392 \u00b7 1 Corinthians 3",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 90
+      },
+      {
+        "book": "ps",
+        "chapter": 91
+      },
+      {
+        "book": "ps",
+        "chapter": 92
+      },
+      {
+        "book": "1cor",
+        "chapter": 3
+      }
+    ],
+    "echo": "Heidelberg Catechism Q26",
+    "source": "hc",
+    "cite": {
+      "number": 26
+    }
+  },
+  {
+    "scripture": "Psalms 105\u2013107 \u00b7 1 Corinthians 6",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 105
+      },
+      {
+        "book": "ps",
+        "chapter": 106
+      },
+      {
+        "book": "ps",
+        "chapter": 107
+      },
+      {
+        "book": "1cor",
+        "chapter": 6
+      }
+    ],
+    "echo": "Heidelberg Catechism Q60",
+    "source": "hc",
+    "cite": {
+      "number": 60
+    }
+  },
+  {
+    "scripture": "Psalms 120\u2013121",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 120
+      },
+      {
+        "book": "ps",
+        "chapter": 121
+      }
+    ],
+    "echo": "Belgic Confession Art. 2",
+    "source": "belgic",
+    "cite": {
+      "article": 2
+    }
+  },
+  {
+    "scripture": "Psalms 140\u2013141 \u00b7 2 Corinthians 1",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 140
+      },
+      {
+        "book": "ps",
+        "chapter": 141
+      },
+      {
+        "book": "2cor",
+        "chapter": 1
+      }
+    ],
+    "echo": "Belgic Confession Art. 13",
+    "source": "belgic",
+    "cite": {
+      "article": 13
+    }
+  },
+  {
+    "scripture": "Psalms 150\u2013150; Proverbs 1 \u00b7 2 Corinthians 4",
+    "refs": [
+      {
+        "book": "ps",
+        "chapter": 150
+      },
+      {
+        "book": "prov",
+        "chapter": 1
+      },
+      {
+        "book": "2cor",
+        "chapter": 4
+      }
+    ],
+    "echo": "Belgic Confession Art. 16",
+    "source": "belgic",
+    "cite": {
+      "article": 16
+    }
+  },
+  {
+    "scripture": "Proverbs 10\u201311",
+    "refs": [
+      {
+        "book": "prov",
+        "chapter": 10
+      },
+      {
+        "book": "prov",
+        "chapter": 11
+      }
+    ],
+    "echo": "Westminster Confession 7.3",
+    "source": "wcf",
+    "cite": {
+      "chapter": 7,
+      "section": 3
+    }
+  },
+  {
+    "scripture": "Proverbs 20\u201321 \u00b7 2 Corinthians 12",
+    "refs": [
+      {
+        "book": "prov",
+        "chapter": 20
+      },
+      {
+        "book": "prov",
+        "chapter": 21
+      },
+      {
+        "book": "2cor",
+        "chapter": 12
+      }
+    ],
+    "echo": "Westminster Confession 11.1",
+    "source": "wcf",
+    "cite": {
+      "chapter": 11,
+      "section": 1
+    }
+  },
+  {
+    "scripture": "Ecclesiastes 9\u201310",
+    "refs": [
+      {
+        "book": "eccl",
+        "chapter": 9
+      },
+      {
+        "book": "eccl",
+        "chapter": 10
+      }
+    ],
+    "echo": "Westminster Confession 25.2",
+    "source": "wcf",
+    "cite": {
+      "chapter": 25,
+      "section": 2
+    }
+  },
+  {
+    "scripture": "Song of Solomon 7\u20138 \u00b7 Ephesians 4",
+    "refs": [
+      {
+        "book": "song",
+        "chapter": 7
+      },
+      {
+        "book": "song",
+        "chapter": 8
+      },
+      {
+        "book": "eph",
+        "chapter": 4
+      }
+    ],
+    "echo": "Heidelberg Catechism Q52",
+    "source": "hc",
+    "cite": {
+      "number": 52
+    }
+  },
+  {
+    "scripture": "Isaiah 9\u201310 \u00b7 Philippians 1",
+    "refs": [
+      {
+        "book": "isa",
+        "chapter": 9
+      },
+      {
+        "book": "isa",
+        "chapter": 10
+      },
+      {
+        "book": "phil",
+        "chapter": 1
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  },
+  {
+    "scripture": "Isaiah 19\u201320 \u00b7 Philippians 4",
+    "refs": [
+      {
+        "book": "isa",
+        "chapter": 19
+      },
+      {
+        "book": "isa",
+        "chapter": 20
+      },
+      {
+        "book": "phil",
+        "chapter": 4
+      }
+    ],
+    "echo": "Heidelberg Catechism Q26",
+    "source": "hc",
+    "cite": {
+      "number": 26
+    }
+  },
+  {
+    "scripture": "Isaiah 29\u201330",
+    "refs": [
+      {
+        "book": "isa",
+        "chapter": 29
+      },
+      {
+        "book": "isa",
+        "chapter": 30
+      }
+    ],
+    "echo": "Heidelberg Catechism Q60",
+    "source": "hc",
+    "cite": {
+      "number": 60
+    }
+  },
+  {
+    "scripture": "Isaiah 39\u201340 \u00b7 1 Thessalonians 4",
+    "refs": [
+      {
+        "book": "isa",
+        "chapter": 39
+      },
+      {
+        "book": "isa",
+        "chapter": 40
+      },
+      {
+        "book": "1thess",
+        "chapter": 4
+      }
+    ],
+    "echo": "Belgic Confession Art. 2",
+    "source": "belgic",
+    "cite": {
+      "article": 2
+    }
+  },
+  {
+    "scripture": "Isaiah 49\u201350 \u00b7 2 Thessalonians 2",
+    "refs": [
+      {
+        "book": "isa",
+        "chapter": 49
+      },
+      {
+        "book": "isa",
+        "chapter": 50
+      },
+      {
+        "book": "2thess",
+        "chapter": 2
+      }
+    ],
+    "echo": "Belgic Confession Art. 9",
+    "source": "belgic",
+    "cite": {
+      "article": 9
+    }
+  },
+  {
+    "scripture": "Isaiah 59\u201360",
+    "refs": [
+      {
+        "book": "isa",
+        "chapter": 59
+      },
+      {
+        "book": "isa",
+        "chapter": 60
+      }
+    ],
+    "echo": "Belgic Confession Art. 13",
+    "source": "belgic",
+    "cite": {
+      "article": 13
+    }
+  },
+  {
+    "scripture": "Jeremiah 3\u20134 \u00b7 2 Timothy 1",
+    "refs": [
+      {
+        "book": "jer",
+        "chapter": 3
+      },
+      {
+        "book": "jer",
+        "chapter": 4
+      },
+      {
+        "book": "2tim",
+        "chapter": 1
+      }
+    ],
+    "echo": "Belgic Confession Art. 16",
+    "source": "belgic",
+    "cite": {
+      "article": 16
+    }
+  },
+  {
+    "scripture": "Jeremiah 13\u201314 \u00b7 2 Timothy 4",
+    "refs": [
+      {
+        "book": "jer",
+        "chapter": 13
+      },
+      {
+        "book": "jer",
+        "chapter": 14
+      },
+      {
+        "book": "2tim",
+        "chapter": 4
+      }
+    ],
+    "echo": "Westminster Confession 7.3",
+    "source": "wcf",
+    "cite": {
+      "chapter": 7,
+      "section": 3
+    }
+  },
+  {
+    "scripture": "Jeremiah 23\u201324 \u00b7 Titus 3",
+    "refs": [
+      {
+        "book": "jer",
+        "chapter": 23
+      },
+      {
+        "book": "jer",
+        "chapter": 24
+      },
+      {
+        "book": "titus",
+        "chapter": 3
+      }
+    ],
+    "echo": "Westminster Confession 11.1",
+    "source": "wcf",
+    "cite": {
+      "chapter": 11,
+      "section": 1
+    }
+  },
+  {
+    "scripture": "Jeremiah 43\u201344 \u00b7 Hebrews 7",
+    "refs": [
+      {
+        "book": "jer",
+        "chapter": 43
+      },
+      {
+        "book": "jer",
+        "chapter": 44
+      },
+      {
+        "book": "heb",
+        "chapter": 7
+      }
+    ],
+    "echo": "Westminster Confession 25.2",
+    "source": "wcf",
+    "cite": {
+      "chapter": 25,
+      "section": 2
+    }
+  },
+  {
+    "scripture": "Lamentations 1\u20132 \u00b7 Hebrews 10",
+    "refs": [
+      {
+        "book": "lam",
+        "chapter": 1
+      },
+      {
+        "book": "lam",
+        "chapter": 2
+      },
+      {
+        "book": "heb",
+        "chapter": 10
+      }
+    ],
+    "echo": "Heidelberg Catechism Q52",
+    "source": "hc",
+    "cite": {
+      "number": 52
+    }
+  },
+  {
+    "scripture": "Ezekiel 6\u20137",
+    "refs": [
+      {
+        "book": "ezek",
+        "chapter": 6
+      },
+      {
+        "book": "ezek",
+        "chapter": 7
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  },
+  {
+    "scripture": "Ezekiel 16\u201317 \u00b7 James 5",
+    "refs": [
+      {
+        "book": "ezek",
+        "chapter": 16
+      },
+      {
+        "book": "ezek",
+        "chapter": 17
+      },
+      {
+        "book": "jas",
+        "chapter": 5
+      }
+    ],
+    "echo": "Heidelberg Catechism Q26",
+    "source": "hc",
+    "cite": {
+      "number": 26
+    }
+  },
+  {
+    "scripture": "Ezekiel 26\u201327 \u00b7 1 Peter 3",
+    "refs": [
+      {
+        "book": "ezek",
+        "chapter": 26
+      },
+      {
+        "book": "ezek",
+        "chapter": 27
+      },
+      {
+        "book": "1pet",
+        "chapter": 3
+      }
+    ],
+    "echo": "Heidelberg Catechism Q60",
+    "source": "hc",
+    "cite": {
+      "number": 60
+    }
+  },
+  {
+    "scripture": "Ezekiel 36\u201337 \u00b7 2 Peter 1",
+    "refs": [
+      {
+        "book": "ezek",
+        "chapter": 36
+      },
+      {
+        "book": "ezek",
+        "chapter": 37
+      },
+      {
+        "book": "2pet",
+        "chapter": 1
+      }
+    ],
+    "echo": "Belgic Confession Art. 2",
+    "source": "belgic",
+    "cite": {
+      "article": 2
+    }
+  },
+  {
+    "scripture": "Ezekiel 46\u201347",
+    "refs": [
+      {
+        "book": "ezek",
+        "chapter": 46
+      },
+      {
+        "book": "ezek",
+        "chapter": 47
+      }
+    ],
+    "echo": "Belgic Confession Art. 9",
+    "source": "belgic",
+    "cite": {
+      "article": 9
+    }
+  },
+  {
+    "scripture": "Daniel 8\u20139 \u00b7 2 John 1",
+    "refs": [
+      {
+        "book": "dan",
+        "chapter": 8
+      },
+      {
+        "book": "dan",
+        "chapter": 9
+      },
+      {
+        "book": "2john",
+        "chapter": 1
+      }
+    ],
+    "echo": "Belgic Confession Art. 13",
+    "source": "belgic",
+    "cite": {
+      "article": 13
+    }
+  },
+  {
+    "scripture": "Hosea 6\u20137 \u00b7 Revelation 1",
+    "refs": [
+      {
+        "book": "hos",
+        "chapter": 6
+      },
+      {
+        "book": "hos",
+        "chapter": 7
+      },
+      {
+        "book": "rev",
+        "chapter": 1
+      }
+    ],
+    "echo": "Belgic Confession Art. 16",
+    "source": "belgic",
+    "cite": {
+      "article": 16
+    }
+  },
+  {
+    "scripture": "Joel 2\u20133",
+    "refs": [
+      {
+        "book": "joel",
+        "chapter": 2
+      },
+      {
+        "book": "joel",
+        "chapter": 3
+      }
+    ],
+    "echo": "Westminster Confession 7.3",
+    "source": "wcf",
+    "cite": {
+      "chapter": 7,
+      "section": 3
+    }
+  },
+  {
+    "scripture": "Amos 9\u20139; Obadiah 1 \u00b7 Revelation 9",
+    "refs": [
+      {
+        "book": "amos",
+        "chapter": 9
+      },
+      {
+        "book": "obad",
+        "chapter": 1
+      },
+      {
+        "book": "rev",
+        "chapter": 9
+      }
+    ],
+    "echo": "Westminster Confession 11.1",
+    "source": "wcf",
+    "cite": {
+      "chapter": 11,
+      "section": 1
+    }
+  },
+  {
+    "scripture": "Zephaniah 2\u20133 \u00b7 Revelation 15",
+    "refs": [
+      {
+        "book": "zeph",
+        "chapter": 2
+      },
+      {
+        "book": "zeph",
+        "chapter": 3
+      },
+      {
+        "book": "rev",
+        "chapter": 15
+      }
+    ],
+    "echo": "Westminster Confession 25.2",
+    "source": "wcf",
+    "cite": {
+      "chapter": 25,
+      "section": 2
+    }
+  },
+  {
+    "scripture": "Zechariah 7\u20138",
+    "refs": [
+      {
+        "book": "zech",
+        "chapter": 7
+      },
+      {
+        "book": "zech",
+        "chapter": 8
+      }
+    ],
+    "echo": "Heidelberg Catechism Q52",
+    "source": "hc",
+    "cite": {
+      "number": 52
+    }
+  },
+  {
+    "scripture": "Malachi 3\u20134",
+    "refs": [
+      {
+        "book": "mal",
+        "chapter": 3
+      },
+      {
+        "book": "mal",
+        "chapter": 4
+      }
+    ],
+    "echo": "Heidelberg Catechism Q1",
+    "source": "hc",
+    "cite": {
+      "number": 1
+    }
+  }
+]

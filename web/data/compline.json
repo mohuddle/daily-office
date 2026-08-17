@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Compline Lessons",
+    "description": "Short weekly cycle of bedtime lessons for Compline, drawn from classic 1928 BCP options and traditional night-prayer texts (comfort, watchfulness, rest in Christ). Suitable for 1662/1928/REC use.",
+    "notes": [
+      "These are intentionally brief — one or two short passages per night.",
+      "Classic fixed options from 1928 BCP Compline include Jeremiah 14:9, Matthew 11:28–30, and Hebrews 13:20–21.",
+      "A simple fixed alternative is to use Matthew 11:28–30 every night."
+    ]
+  },
+  "lessons": {
+    "sunday": [
+      "Hebrews 13:20–21",
+      "Romans 8:14–17"
+    ],
+    "monday": [
+      "1 Thessalonians 5:9–10",
+      "Isaiah 26:3–4"
+    ],
+    "tuesday": [
+      "1 Peter 5:8–9",
+      "John 16:33"
+    ],
+    "wednesday": [
+      "Ephesians 4:26–27",
+      "Psalm 4:8"
+    ],
+    "thursday": [
+      "1 Thessalonians 5:23",
+      "Jeremiah 14:9"
+    ],
+    "friday": [
+      "Matthew 11:28–30",
+      "Romans 8:38–39"
+    ],
+    "saturday": [
+      "Isaiah 30:15",
+      "Revelation 22:20–21"
+    ]
+  },
+  "fixed_classic_options": [
+    "Jeremiah 14:9",
+    "Matthew 11:28–30",
+    "Hebrews 13:20–21",
+    "1 Peter 5:8–9"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "provider": "qwen3",
+  "model": "1.7b",
+  "voice": "clone",
+  "clone": true,
+  "device": "cuda",
+  "reference": "voices/reader.wav",
+  "speed": 0.88,
+  "instruct": "Calm, reverent, unhurried Anglican liturgical reading. Speak every sentence slowly and in full. Psalm is sahm. Selah is SAYlah. Amen is Ah-men."
+}
