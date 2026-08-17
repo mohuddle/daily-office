@@ -12,7 +12,9 @@
   <script>
     (function () {
       const root = document.documentElement;
-      root.dataset.theme = localStorage.getItem("do-theme") || "chapel";
+      let theme = localStorage.getItem("do-theme") || "chapel";
+      if (theme === "parchment" || theme === "cream" || theme === "solarized") theme = "spacegray";
+      root.dataset.theme = theme;
       root.dataset.size = localStorage.getItem("do-size") || "md";
       root.classList.toggle("use-season", localStorage.getItem("do-season") === "1");
     })();
@@ -36,7 +38,7 @@
         <div class="appearance__group" role="group" aria-label="Theme">
           <button type="button" data-theme="chapel" title="Chapel">Chapel</button>
           <button type="button" data-theme="clear" title="Clear reading">Clear</button>
-          <button type="button" data-theme="cream" title="Cream">Cream</button>
+          <button type="button" data-theme="spacegray" title="Spacegray">Spacegray</button>
         </div>
         <button type="button" id="season-toggle" class="season-toggle" aria-pressed="false" title="Use the day's liturgical color">
           <span class="season-swatch" aria-hidden="true"></span>
