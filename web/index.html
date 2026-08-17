@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#1a1612">
+  <meta name="description" content="Daily Office lessons for Morning, Midday, Evening, and Compline.">
+  <title>Daily Office</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <script>
+    (function () {
+      const root = document.documentElement;
+      root.dataset.theme = localStorage.getItem("do-theme") || "chapel";
+      root.dataset.size = localStorage.getItem("do-size") || "md";
+      root.classList.toggle("use-season", localStorage.getItem("do-season") === "1");
+    })();
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <p class="brand"><span class="brand-book" aria-hidden="true"></span>Daily Office</p>
+      <h1 id="civil-date">Loading…</h1>
+      <p id="season" class="season"></p>
+      <p id="feast" class="feast" hidden></p>
+      <div class="date-nav">
+        <button type="button" id="prev-day" aria-label="Previous day">‹</button>
+        <input type="date" id="date-input" aria-label="Choose date">
+        <button type="button" id="today">Today</button>
+        <button type="button" id="next-day" aria-label="Next day">›</button>
+      </div>
+      <div class="appearance" role="toolbar" aria-label="Reading appearance">
+        <div class="appearance__group" role="group" aria-label="Theme">
+          <button type="button" data-theme="chapel" title="Chapel">Chapel</button>
+          <button type="button" data-theme="clear" title="Clear reading">Clear</button>
+          <button type="button" data-theme="cream" title="Cream">Cream</button>
+        </div>
+        <button type="button" id="season-toggle" class="season-toggle" aria-pressed="false" title="Use the day's liturgical color">
+          <span class="season-swatch" aria-hidden="true"></span>
+          Season
+        </button>
+        <div class="appearance__group appearance__sizes" role="group" aria-label="Text size">
+          <button type="button" data-size="sm" title="Smaller text">A</button>
+          <button type="button" data-size="md" title="Medium text">A</button>
+          <button type="button" data-size="lg" title="Larger text">A</button>
+        </div>
+      </div>
+    </header>
+
+    <nav id="office-nav" class="office-nav" aria-label="Offices"></nav>
+    <main id="office" class="office"></main>
+
+    <footer class="colophon">
+      Lessons from <a href="https://thetrinitymission.org/">The Trinity Mission</a>.
+      Scripture: Berean Standard Bible.
+      Confessions: Westminster Standards, Heidelberg Catechism, Belgic Confession.
+      Scripture audio. Times shown in America/Chicago.
+      Inspired by
+      <a href="https://thetrinitymission.org/">The Trinity Mission</a>,
+      <a href="https://www.dailyoffice2019.com/">Daily Office 2019</a>,
+      <a href="https://dailyofficeforall.com/">Daily Office For All</a>,
+      <a href="https://reformedconfessions.com/westminster-daily/reading-plan">Westminster Daily</a>,
+      and
+      <a href="https://reformeddogmatika.com/reformed-bible-reading-plan/">Reformed Dogmatika</a>.
+    </footer>
+  </div>
+
+  <aside id="dock" class="dock is-empty" aria-label="Office audio">
+    <div class="dock__inner">
+      <div class="dock__copy">
+        <p id="dock-title" class="dock__title">Daily Office</p>
+        <p id="dock-meta" class="dock__meta">Scripture audio</p>
+      </div>
+      <p id="dock-empty" class="dock__empty">No recording for this office yet.</p>
+      <audio id="dock-audio" controls preload="metadata"></audio>
+    </div>
+  </aside>
+  <script src="js/bible.js"></script>
+  <script src="js/liturgical.js"></script>
+  <script src="js/confession.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
