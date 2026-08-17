@@ -2,6 +2,8 @@
 
 A phone-friendly web app / PWA of daily Scripture lessons (Morning, Midday, Evening, Compline) with locally generated Qwen3-TTS audio.
 
+A lighter sibling without recordings, with lessons linked to the BSB, lives in [daily-office-reader](https://github.com/mohuddle/daily-office-reader).
+
 ## What this is
 
 A first version that matches the existing daily-lessons workflow, not a full Book of Common Prayer app yet:
