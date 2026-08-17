@@ -10,8 +10,7 @@ const WEEKDAY_KEYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "s
 const THEME_COLORS = {
   chapel: "#1a1612",
   clear: "#f4f1ea",
-  cream: "#f3efe6",
-  parchment: "#f3efe6",
+  spacegray: "#2b303b",
 };
 
 const state = {
@@ -24,7 +23,7 @@ const state = {
 };
 
 function migrateTheme(theme) {
-  return theme === "parchment" ? "cream" : theme;
+  return ["parchment", "cream", "solarized"].includes(theme) ? "spacegray" : theme;
 }
 
 async function loadJSON(path) {
@@ -67,7 +66,7 @@ async function boot() {
 
 function readAppearanceQuery() {
   const params = new URLSearchParams(location.search);
-  if (["chapel", "clear", "cream", "parchment"].includes(params.get("theme"))) {
+  if (["chapel", "clear", "spacegray", "solarized", "cream", "parchment"].includes(params.get("theme"))) {
     state.theme = migrateTheme(params.get("theme"));
   }
   if (["sm", "md", "lg"].includes(params.get("size"))) {
@@ -142,7 +141,9 @@ function bind() {
 
 function applyAppearance() {
   const root = document.documentElement;
-  if (state.theme === "cream") localStorage.setItem("do-theme", "cream");
+  if (localStorage.getItem("do-theme") !== state.theme) {
+    localStorage.setItem("do-theme", state.theme);
+  }
   root.dataset.theme = state.theme;
   root.dataset.size = state.size;
   root.classList.toggle("use-season", state.useSeason);
