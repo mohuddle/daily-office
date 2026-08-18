@@ -2,6 +2,8 @@
 
 A phone-friendly web app / PWA of daily Scripture lessons (Morning, Midday, Evening, Compline) with locally generated Qwen3-TTS audio.
 
+Live site: https://mohuddle.github.io/daily-office/
+
 A lighter sibling without recordings, with lessons linked to the BSB, lives in [daily-office-reader](https://github.com/mohuddle/daily-office-reader).
 
 ## What this is
