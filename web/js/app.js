@@ -10,7 +10,7 @@ const WEEKDAY_KEYS = ["monday", "tuesday", "wednesday", "thursday", "friday", "s
 const THEME_COLORS = {
   chapel: "#1a1612",
   clear: "#f4f1ea",
-  spacegray: "#2b303b",
+  spacegray: "#181c24",
 };
 
 const state = {
