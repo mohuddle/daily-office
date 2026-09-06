@@ -1,4 +1,4 @@
-const CACHE = "daily-office-v14";
+const CACHE = "daily-office-v15";
 const PRECACHE = [
   "./",
   "./index.html",

@@ -3,11 +3,11 @@
 
 from __future__ import annotations
 
-import json
 from datetime import date
 from pathlib import Path
 
 from bible import number_words, resolve_reference
+from safeio import read_json
 
 ROOT = Path(__file__).resolve().parents[1]
 CONF = ROOT / "web" / "data" / "confessions"
@@ -92,7 +92,9 @@ SOURCE_NAMES = {
 
 
 def _load(name: str):
-    return json.loads((CONF / name).read_text(encoding="utf-8"))
+    if "/" in name or "\\" in name or name in {".", ".."} or not name.endswith(".json"):
+        raise ValueError("bad confession file name")
+    return read_json(CONF / name)
 
 
 _CORPUS = None

@@ -119,10 +119,16 @@ scripts\generate-today.cmd --force
 
 `--week` starts on the Sunday on or after `--date` (default: today in America/Chicago) and records through Saturday. `scripts\generate-today.cmd` records only today. Existing MP3s are skipped unless you pass `--force`. ffmpeg is required. On Windows see [WINDOWS.md](WINDOWS.md).
 
-Refresh the Berean Standard Bible text:
+Refresh the Berean Standard Bible text (HTTPS, size-capped):
 
 ```bash
 python3 scripts/prepare_data.py
+```
+
+Rebuild confession data from `data/creeds/` and `data/dogmatika-plan.txt` (not `/tmp`):
+
+```bash
+python3 scripts/prepare_confessions.py
 ```
 
 ## Credits and inspiration

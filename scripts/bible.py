@@ -3,9 +3,10 @@
 
 from __future__ import annotations
 
-import json
 import re
 from pathlib import Path
+
+from safeio import MAX_TEXT_BYTES, read_json
 
 ROOT = Path(__file__).resolve().parents[1]
 BSB_JSON = ROOT / "web" / "data" / "bsb.json"
@@ -147,7 +148,7 @@ _bible: dict | None = None
 def load_bible() -> dict:
     global _bible
     if _bible is None:
-        _bible = json.loads(BSB_JSON.read_text(encoding="utf-8"))
+        _bible = read_json(BSB_JSON, max_bytes=MAX_TEXT_BYTES)
     return _bible
 
 

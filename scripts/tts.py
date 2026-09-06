@@ -20,9 +20,10 @@ import subprocess
 import tempfile
 import time
 import urllib.error
-import urllib.request
 from dataclasses import dataclass
 from pathlib import Path
+
+from safeio import MAX_JSON_BYTES, MAX_KEY_BYTES, fetch_bytes, read_bytes, read_json, write_bytes, write_text
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTH_PATH = Path.home() / ".grok" / "auth.json"
@@ -130,7 +131,7 @@ class TtsSettings:
     ) -> TtsSettings:
         data: dict = {}
         if CONFIG_PATH.exists():
-            data = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+            data = read_json(CONFIG_PATH, max_bytes=MAX_JSON_BYTES)
         env_provider = os.environ.get("DAILY_OFFICE_TTS", "").strip()
         chosen = (provider or env_provider or data.get("provider") or "qwen3").lower()
         if chosen not in PROVIDERS:
@@ -181,11 +182,11 @@ def leo_token() -> str:
         candidates.append(("XAI_API_KEY", env))
     key_file = ROOT / ".xai_api_key"
     if key_file.exists():
-        value = key_file.read_text(encoding="utf-8").strip()
+        value = read_bytes(key_file, MAX_KEY_BYTES, require_private=True).decode("utf-8").strip()
         if value:
             candidates.append((str(key_file), value))
     if AUTH_PATH.exists():
-        auth = json.loads(AUTH_PATH.read_text(encoding="utf-8"))
+        auth = read_json(AUTH_PATH, max_bytes=MAX_JSON_BYTES)
         value = next(iter(auth.values()), {}).get("key", "")
         if value:
             candidates.append((str(AUTH_PATH), value))
@@ -427,11 +428,8 @@ def concat_mp3(parts: list[Path], dest: Path) -> None:
 
 
 def _download(url: str, dest: Path) -> None:
-    dest.parent.mkdir(parents=True, exist_ok=True)
     print(f"downloading {dest.name}…", flush=True)
-    tmp = dest.with_suffix(dest.suffix + ".part")
-    urllib.request.urlretrieve(url, tmp)
-    tmp.replace(dest)
+    write_bytes(dest, fetch_bytes(url, max_bytes=300_000_000, timeout=300))
 
 
 def _ensure_kokoro_onnx_files() -> None:
@@ -698,11 +696,9 @@ def _load_qwen_weights(model_id: str, device_map: str, dtype) -> object:
 def _ensure_designed_reader(settings: TtsSettings) -> tuple[Path, str]:
     """Create a reusable British reader with VoiceDesign, then we clone it."""
     if DESIGNED_VOICE.exists() and DESIGNED_VOICE.stat().st_size > 20_000:
-        sample = (
-            DESIGNED_TEXT_PATH.read_text(encoding="utf-8").strip()
-            if DESIGNED_TEXT_PATH.exists()
-            else DESIGN_SAMPLE
-        )
+        sample = DESIGN_SAMPLE
+        if DESIGNED_TEXT_PATH.exists():
+            sample = read_bytes(DESIGNED_TEXT_PATH, 65536).decode("utf-8").strip() or DESIGN_SAMPLE
         return DESIGNED_VOICE, sample
     torch, _Qwen = _qwen_torch()
     device_map, dtype = _qwen_device(settings)
@@ -724,7 +720,7 @@ def _ensure_designed_reader(settings: TtsSettings) -> tuple[Path, str]:
     import soundfile as sf
 
     sf.write(DESIGNED_VOICE, wavs[0], int(sr))
-    DESIGNED_TEXT_PATH.write_text(DESIGN_SAMPLE + "\n", encoding="utf-8")
+    write_text(DESIGNED_TEXT_PATH, DESIGN_SAMPLE + "\n")
     del design
     if torch.cuda.is_available():
         torch.cuda.empty_cache()
@@ -810,24 +806,25 @@ def synthesize_leo(text: str, dest: Path) -> None:
     ).encode()
     last: Exception | None = None
     for attempt in range(1, 4):
-        req = urllib.request.Request(
-            TTS_URL,
-            data=payload,
-            headers={
-                "Authorization": f"Bearer {leo_token()}",
-                "Content-Type": "application/json",
-                "User-Agent": "daily-office-tts/1.0",
-            },
-            method="POST",
-        )
         try:
-            with urllib.request.urlopen(req, timeout=180) as resp:
-                dest.write_bytes(resp.read())
+            audio = fetch_bytes(
+                TTS_URL,
+                max_bytes=8_000_000,
+                timeout=180,
+                headers={
+                    "Authorization": f"Bearer {leo_token()}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "daily-office-tts/1.0",
+                },
+                data=payload,
+                method="POST",
+            )
+            write_bytes(dest, audio)
             if dest.stat().st_size < 1000:
                 raise RuntimeError(f"TTS wrote a suspiciously small file: {dest}")
             return
         except urllib.error.HTTPError as exc:
-            body = exc.read().decode("utf-8", "replace").strip()
+            body = exc.read(4096).decode("utf-8", "replace").strip()
             last = RuntimeError(f"HTTP {exc.code} {exc.reason}: {body[:500]}")
             print(f"  TTS attempt {attempt} failed: {last}", flush=True)
             if exc.code in {400, 401, 403, 404}:

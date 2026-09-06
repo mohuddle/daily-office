@@ -26,10 +26,24 @@ function migrateTheme(theme) {
   return ["parchment", "cream", "solarized"].includes(theme) ? "spacegray" : theme;
 }
 
+const MAX_JSON_BYTES = 8 * 1024 * 1024;
+const AUDIO_SRC_RE = /^audio\/[A-Za-z0-9][A-Za-z0-9._-]*\.mp3$/;
+
 async function loadJSON(path) {
+  if (!/^data\/[A-Za-z0-9][A-Za-z0-9._/-]*\.json$/.test(path) || path.includes("..")) {
+    throw new Error("refusing unexpected data path");
+  }
   const res = await fetch(path);
-  if (!res.ok) throw new Error(`Failed to load ${path}`);
-  return res.json();
+  if (!res.ok) throw new Error("Failed to load office data");
+  const declared = res.headers.get("Content-Length");
+  if (declared && Number(declared) > MAX_JSON_BYTES) {
+    throw new Error("office data is too large");
+  }
+  const buf = await res.arrayBuffer();
+  if (buf.byteLength > MAX_JSON_BYTES) {
+    throw new Error("office data is too large");
+  }
+  return JSON.parse(new TextDecoder("utf-8").decode(buf));
 }
 
 async function boot() {
@@ -230,9 +244,9 @@ function render() {
   nav.innerHTML = OFFICES.map((office) => {
     const active = office.id === state.office ? "is-active" : "";
     const now = office.id === nowOffice ? "is-now" : "";
-    return `<button type="button" class="office-tab ${active} ${now}" data-office="${office.id}">
-      <span class="office-tab__name">${office.label}</span>
-      <span class="office-tab__time">${office.time}</span>
+    return `<button type="button" class="office-tab ${active} ${now}" data-office="${escapeHtml(office.id)}">
+      <span class="office-tab__name">${escapeHtml(office.label)}</span>
+      <span class="office-tab__time">${escapeHtml(office.time)}</span>
     </button>`;
   }).join("");
 
@@ -288,20 +302,20 @@ function renderOffice(id, found, info) {
 
   return `
     <header class="office-head">
-      <p class="eyebrow">${meta.label} Prayer</p>
-      <h2>${info.civil}</h2>
-      <p class="lede">${info.spoken}${info.feast ? `, ${info.feast}` : ""}</p>
+      <p class="eyebrow">${escapeHtml(meta.label)} Prayer</p>
+      <h2>${escapeHtml(info.civil)}</h2>
+      <p class="lede">${escapeHtml(info.spoken)}${info.feast ? `, ${escapeHtml(info.feast)}` : ""}</p>
     </header>
     ${opening}
     <section class="refs">
-      ${psalms ? `<p><strong>Psalms</strong> ${psalms}</p>` : ""}
-      ${lessons.length ? `<p><strong>Lessons</strong> ${lessons.join(" · ")}</p>` : ""}
+      ${psalms ? `<p><strong>Psalms</strong> ${escapeHtml(psalms)}</p>` : ""}
+      ${lessons.length ? `<p><strong>Lessons</strong> ${escapeHtml(lessons.join(" · "))}</p>` : ""}
       ${confessionRef}
       ${found.day?.liturgical_name && (id === "morning" || id === "evening")
-        ? `<p><strong>Table</strong> ${found.day.liturgical_name}</p>`
+        ? `<p><strong>Table</strong> ${escapeHtml(found.day.liturgical_name)}</p>`
         : ""}
     </section>
-    ${emptyNote ? `<p class="empty">${emptyNote}</p>` : psalmBlock + lessonBlocks}
+    ${emptyNote ? `<p class="empty">${escapeHtml(emptyNote)}</p>` : psalmBlock + lessonBlocks}
     ${!emptyNote && (lessons.length || psalms) ? `<p class="response">The Word of the Lord.<br>Thanks be to God.</p>` : ""}
     ${confession ? renderConfession(confession) : ""}
     ${benediction ? renderBenediction(benediction) : ""}
@@ -343,10 +357,10 @@ function updateDock(id, found, info) {
   const meta = OFFICES.find((o) => o.id === id);
   const dock = document.getElementById("dock");
   const audio = document.getElementById("dock-audio");
-  const src = found.audio[id];
+  const src = typeof found.audio[id] === "string" ? found.audio[id] : "";
   document.getElementById("dock-title").textContent = `Welcome to ${meta.label === "Compline" ? "Compline" : `${meta.label} Prayer`}`;
   document.getElementById("dock-meta").textContent = `${info.civil} · audio`;
-  if (!src) {
+  if (!AUDIO_SRC_RE.test(src)) {
     dock.classList.add("is-empty");
     audio.removeAttribute("src");
     audio.load();
@@ -368,7 +382,7 @@ function renderPassage(title, ref, psalms) {
   try {
     passage = resolveReference(state.data.bible, ref, psalms);
   } catch (err) {
-    return `<article class="passage"><h3>${title}</h3><p class="empty">${ref}: ${err.message}</p></article>`;
+    return `<article class="passage"><h3>${escapeHtml(title)}</h3><p class="empty">${escapeHtml(ref)}: ${escapeHtml(err.message)}</p></article>`;
   }
   const groups = [];
   for (const verse of passage.verses) {
@@ -380,13 +394,13 @@ function renderPassage(title, ref, psalms) {
     }
   }
   const body = groups.map((group) => {
-    const heading = group.book === "Psalm" ? `Psalm ${group.chapter}` : `${group.book} ${group.chapter}`;
+    const heading = group.book === "Psalm" ? `Psalm ${escapeHtml(group.chapter)}` : `${escapeHtml(group.book)} ${escapeHtml(group.chapter)}`;
     const verses = group.verses
-      .map((v) => `<p class="verse"><sup>${v.verse}</sup>${formatVerseHtml(v.text)}</p>`)
+      .map((v) => `<p class="verse"><sup>${escapeHtml(v.verse)}</sup>${formatVerseHtml(v.text)}</p>`)
       .join("");
     return `<h4>${heading}</h4>${verses}`;
   }).join("");
-  return `<article class="passage"><h3>${title} <span>${escapeHtml(ref)}</span></h3>${body}</article>`;
+  return `<article class="passage"><h3>${escapeHtml(title)} <span>${escapeHtml(ref)}</span></h3>${body}</article>`;
 }
 
 function formatVerseHtml(text) {
@@ -412,5 +426,5 @@ if ("serviceWorker" in navigator) {
 }
 
 boot().catch((err) => {
-  document.getElementById("office").innerHTML = `<p class="empty">${err.message}</p>`;
+  document.getElementById("office").textContent = err.message || "Failed to load the office.";
 });

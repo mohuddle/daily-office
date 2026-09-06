@@ -21,3 +21,4 @@ web/audio/*.mp3
 web/data/scripts/*.txt
 *.local
 .grok/
+AGENTS.md

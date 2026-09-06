@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import subprocess
 import sys
 import tempfile
@@ -18,6 +17,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from bible import passage_text, spoken_reference  # noqa: E402
 from confession import benediction_for, confession_for, spoken_confession  # noqa: E402
 from liturgical import liturgical_day, orientation_sentence  # noqa: E402
+from safeio import read_json, write_json, write_text  # noqa: E402
 from tts import TtsSettings, concat_mp3, make_silence, synthesize as tts_synthesize  # noqa: E402
 
 AUDIO_DIR = ROOT / "web" / "audio"
@@ -67,7 +67,7 @@ def week_dates(d: date) -> list[date]:
 
 
 def load_json(path: Path) -> dict:
-    return json.loads(path.read_text(encoding="utf-8"))
+    return read_json(path)
 
 
 def weekday_key(d: date) -> str:
@@ -238,17 +238,16 @@ def synthesize(text: str, dest: Path) -> None:
 
 
 def update_index(d: date, files: dict[str, str]) -> None:
-    index = {}
-    if INDEX_PATH.exists():
-        index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    index = load_index()
     index[d.isoformat()] = files
-    INDEX_PATH.write_text(json.dumps(index, indent=2) + "\n", encoding="utf-8")
+    write_json(INDEX_PATH, index, indent=2)
 
 
 def load_index() -> dict:
-    if INDEX_PATH.exists():
-        return json.loads(INDEX_PATH.read_text(encoding="utf-8"))
-    return {}
+    try:
+        return read_json(INDEX_PATH)
+    except FileNotFoundError:
+        return {}
 
 
 def already_recorded(d: date, key: str, office: dict, force: bool) -> bool:
@@ -263,8 +262,7 @@ def already_recorded(d: date, key: str, office: dict, force: bool) -> bool:
 def generate_office(d: date, office: dict) -> None:
     script = build_script(d, office)
     script_path = ROOT / "web" / "data" / "scripts" / f"{office['id']}_{d.isoformat()}.txt"
-    script_path.parent.mkdir(parents=True, exist_ok=True)
-    script_path.write_text(script, encoding="utf-8")
+    write_text(script_path, script)
     dest = AUDIO_DIR / office["filename"]
     print(f"synthesizing {office['id']} ({len(script)} chars) -> {dest.name}", flush=True)
     if office.get("sentence"):

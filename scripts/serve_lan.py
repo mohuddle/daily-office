@@ -16,6 +16,21 @@ class Handler(SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, directory=str(ROOT), **kwargs)
 
+    def translate_path(self, path: str) -> str:
+        mapped = Path(super().translate_path(path))
+        root = ROOT.resolve()
+        try:
+            rel = mapped.resolve().relative_to(root)
+        except (OSError, ValueError):
+            return str(root / "missing")
+        current = root
+        for part in rel.parts:
+            nxt = current / part
+            if nxt.is_symlink():
+                return str(root / "missing")
+            current = nxt
+        return str(current)
+
     def log_message(self, fmt: str, *args) -> None:
         now = dt.datetime.now().strftime("%H:%M:%S")
         print(f"[{now}] {self.client_address[0]} {fmt % args}", flush=True)

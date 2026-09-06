@@ -3,17 +3,17 @@
 
 from __future__ import annotations
 
-import json
 import re
-import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from html.parser import HTMLParser
 from pathlib import Path
 
+from safeio import MAX_TEXT_BYTES, fetch_bytes, read_json, read_text, write_json
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "web" / "data" / "confessions"
-CREED_SRC = Path("/tmp/creeds")
-PLAN_TXT = Path("/tmp/dogmatika/plan.txt")
+CREED_SRC = ROOT / "data" / "creeds"
+PLAN_TXT = ROOT / "data" / "dogmatika-plan.txt"
 UA = {"User-Agent": "daily-office-confession-builder/1.0"}
 
 
@@ -39,7 +39,9 @@ class TextExtractor(HTMLParser):
 
 
 def load_creed(name: str) -> dict:
-    return json.loads((CREED_SRC / name).read_text(encoding="utf-8"))
+    if "/" in name or "\\" in name or name in {".", ".."} or not name.endswith(".json"):
+        raise ValueError("bad creed file name")
+    return read_json(CREED_SRC / name)
 
 
 def compact_wcf() -> dict:
@@ -90,8 +92,7 @@ def compact_belgic() -> dict:
 def fetch_day(mm: int, dd: int) -> tuple[str, dict]:
     key = f"{mm:02d}-{dd:02d}"
     url = f"https://reformedconfessions.com/westminster-daily/{mm:02d}/{dd:02d}"
-    req = urllib.request.Request(url, headers=UA)
-    html = urllib.request.urlopen(req, timeout=40).read().decode("utf-8", "replace")
+    html = fetch_bytes(url, max_bytes=1_000_000, timeout=40, headers=UA).decode("utf-8", "replace")
     parser = TextExtractor()
     parser.feed(html)
     text = re.sub(r"\s+", " ", "".join(parser.parts))
@@ -234,7 +235,7 @@ def parse_scripture_list(blob: str) -> list[dict]:
 
 
 def parse_echoes() -> list[dict]:
-    text = PLAN_TXT.read_text(encoding="utf-8")
+    text = read_text(PLAN_TXT, MAX_TEXT_BYTES)
     echoes = []
     for raw in text.splitlines():
         line = raw.replace("\x0c", "").rstrip()
@@ -287,7 +288,6 @@ def classify_echo(echo: str) -> tuple[str | None, dict]:
 
 
 def main() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
     print("compacting creeds")
     corpus = {
         "wcf": compact_wcf(),
@@ -296,14 +296,14 @@ def main() -> None:
         "hc": compact_catechism("heidelberg_catechism.json", "Heidelberg Catechism"),
         "belgic": compact_belgic(),
     }
-    (OUT / "corpus.json").write_text(json.dumps(corpus, ensure_ascii=False), encoding="utf-8")
+    write_json(OUT / "corpus.json", corpus, ensure_ascii=False)
     print("scraping Westminster Daily")
     calendar = scrape_westminster_daily()
-    (OUT / "westminster_daily.json").write_text(json.dumps(calendar, indent=2), encoding="utf-8")
+    write_json(OUT / "westminster_daily.json", calendar, indent=2)
     print("days", len(calendar))
     print("parsing Dogmatika echoes")
     echoes = parse_echoes()
-    (OUT / "echoes.json").write_text(json.dumps(echoes, indent=2), encoding="utf-8")
+    write_json(OUT / "echoes.json", echoes, indent=2)
     print("echoes", len(echoes))
     print("done")
 
