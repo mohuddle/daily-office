@@ -144,3 +144,6 @@ This is a small Daily Office app. It is not affiliated with the projects below. 
 - [Chatterbox](https://github.com/resemble-ai/chatterbox) by Resemble AI — optional alternate local backend
 
 Scripture text is the [Berean Standard Bible](https://bereanbible.com/).
+
+---
+Made by [Mobitecture](https://github.com/mohuddle) · apps, architected.
